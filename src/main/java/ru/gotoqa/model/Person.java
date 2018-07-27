@@ -61,7 +61,7 @@ public class Person {
     public String getBirthday() {
         return Birthday;
     }
-
+ 
     public void setBirthday(String birthday) {
         Birthday = birthday;
     }
