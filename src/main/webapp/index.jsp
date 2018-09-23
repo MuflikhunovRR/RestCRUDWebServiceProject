@@ -6,7 +6,7 @@
 <body>
 <h3>REST API CRUD PROJECT</h3>
 <br/>
-<a href="/persons" target="_blank">Schindler's List</a>
+<a href="/bics" target="_blank">Bic's List</a>
 <br/>
 </body>
 </html>

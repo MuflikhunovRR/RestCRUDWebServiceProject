@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ru.gotoqa</groupId>
-	<artifactId>RestCRUDWebServiceProject</artifactId>
+	<artifactId>BicRestServiceProject</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>RestCRUDWebServiceProject</name>
+	<name>BicRestServiceProject</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -25,6 +25,13 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.36</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.1-901-1.jdbc4</version>
 		</dependency>
 
 
@@ -154,7 +161,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>RestCRUDWebServiceProject</finalName>
+		<finalName>BicRestServiceProject</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

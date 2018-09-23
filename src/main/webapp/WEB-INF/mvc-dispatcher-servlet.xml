@@ -14,14 +14,22 @@
     </bean>
 
     <!-- Database Information -->
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-          destroy-method="close">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url"
-                  value="jdbc:mysql://localhost:3306/REST_CRUD?serverTimezone=UTC"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+        <property name="driverClassName" value="org.postgresql.Driver" />
+        <property name="url" value="jdbc:postgresql://edgcmbacqlemgn:919ee8115123680c94affb387b57afa2fa05132f227fcbafc9d25005b631fe6c@ec2-54-227-241-179.compute-1.amazonaws.com:5432/d74bi3k213uinn" />
+        <property name="username" value="edgcmbacqlemgn"/>
+        <property name="password" value="919ee8115123680c94affb387b57afa2fa05132f227fcbafc9d25005b631fe6c"/>
     </bean>
+<!--    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+        <property name="driverClassName" value="org.postgresql.Driver" />
+        <property name="url" value="jdbc:postgresql://localhost:5432/bic" />
+        <property name="username" value="rambutan"/>
+        <property name="password" value=""/>
+    </bean>-->
 
     <!-- Hibernate 4 SessionFactory Bean definition -->
     <bean id="hibernate4AnnotatedSessionFactory"
@@ -29,7 +37,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>ru.gotoqa.model.Person</value>
+                <value>ru.gotoqa.model.Bic</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -42,12 +50,12 @@
     </bean>
 
     <!--personDao and personService beans-->
-    <bean id="personDao" class="ru.gotoqa.dao.PersonDaoImpl">
+    <bean id="bicDao" class="ru.gotoqa.dao.BicDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="personService" class="ru.gotoqa.service.PersonServiceImpl">
-        <property name="personDao" ref="personDao"/>
+    <bean id="bicService" class="ru.gotoqa.service.BicServiceImpl">
+        <property name="bicDao" ref="bicDao"/>
     </bean>
 
     <context:component-scan base-package="ru.gotoqa"/>
